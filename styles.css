@@ -629,133 +629,49 @@ p {
     padding: 0 var(--space-md);
 }
 
-.hero-service-ticket {
+.hero-service-card {
     background-color: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 18px;
-    padding: 1.15rem;
+    border-radius: 20px 20px 10px 10px;
+    padding: var(--space-md) var(--space-lg);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 165px;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
-    position: relative;
-    overflow: hidden;
+    height: 105px;
     transition: all var(--transition-smooth);
 }
 
-.hero-service-ticket:hover {
+.hero-service-card:hover {
     transform: translateY(-4px);
-    background-color: rgba(255, 255, 255, 0.04);
+    background-color: rgba(0, 197, 138, 0.08);
     border-color: var(--color-mint);
-    box-shadow: 0 12px 30px rgba(0, 197, 138, 0.15);
+    box-shadow: 0 10px 25px rgba(0, 197, 138, 0.12);
 }
 
-.ticket-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+.service-card-icon {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-xs);
+    display: inline-block;
+    transition: transform var(--transition-smooth);
 }
 
-.ticket-icon {
-    font-size: 1.25rem;
-}
-
-.ticket-code {
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.3);
-    letter-spacing: 0.05em;
-}
-
-.ticket-body {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 0.4rem;
-    flex-grow: 1;
-}
-
-.ticket-title {
+.service-card-title {
     font-family: var(--font-serif);
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-weight: 600;
     font-style: italic;
     color: var(--color-white);
-    margin-bottom: 2px;
     transition: color var(--transition-smooth);
 }
 
-.ticket-hook {
-    font-family: var(--font-sans);
-    font-size: 0.72rem;
-    color: rgba(255, 255, 255, 0.45);
-    line-height: 1.25;
+.hero-service-card:hover .service-card-icon {
+    transform: scale(1.15) translateY(-2px);
 }
 
-.ticket-stub-line {
-    border-top: 1px dashed rgba(255, 255, 255, 0.12);
-    margin: var(--space-xs) 0;
-    width: 100%;
-    position: relative;
-    transition: border-color var(--transition-smooth);
-}
-
-.ticket-stub-line::before, .ticket-stub-line::after {
-    content: "";
-    position: absolute;
-    top: -6px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: var(--color-emerald-dark);
-    transition: background-color var(--transition-smooth);
-}
-
-.ticket-stub-line::before {
-    left: -24px;
-}
-
-.ticket-stub-line::after {
-    right: -24px;
-}
-
-.ticket-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-.ticket-class {
-    font-family: var(--font-mono);
-    font-size: 0.62rem;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.25);
-    letter-spacing: 0.05em;
-}
-
-.ticket-action {
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    font-weight: 700;
+.hero-service-card:hover .service-card-title {
     color: var(--color-mint);
-    letter-spacing: 0.05em;
-    transition: color var(--transition-smooth);
-}
-
-.hero-service-ticket:hover .ticket-title {
-    color: var(--color-mint);
-}
-
-.hero-service-ticket:hover .ticket-stub-line {
-    border-color: rgba(0, 197, 138, 0.35);
-}
-
-.hero-service-ticket:hover .ticket-action {
-    color: var(--color-white);
 }
 
 /* Floating Search Capsule */
@@ -2441,43 +2357,19 @@ p {
         margin-right: 0;
     }
 
-    .hero-service-ticket {
-        height: 145px;
-        padding: 0.85rem;
-        border-radius: 12px;
+    .hero-service-card {
+        height: 80px;
+        padding: var(--space-xs) var(--space-sm);
+        border-radius: 16px 16px 8px 8px;
     }
 
-    .ticket-icon {
-        font-size: 1rem;
+    .service-card-icon {
+        font-size: 1.25rem;
+        margin-bottom: 2px;
     }
 
-    .ticket-code {
-        font-size: 0.55rem;
-    }
-
-    .ticket-title {
+    .service-card-title {
         font-size: 0.95rem;
-    }
-
-    .ticket-hook {
-        font-size: 0.62rem;
-        line-height: 1.15;
-    }
-
-    .ticket-class {
-        font-size: 0.55rem;
-    }
-
-    .ticket-action {
-        font-size: 0.55rem;
-    }
-
-    .ticket-stub-line::before {
-        left: -20px;
-    }
-
-    .ticket-stub-line::after {
-        right: -20px;
     }
 
     .hero-services-title {
