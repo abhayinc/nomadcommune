@@ -633,41 +633,50 @@ p {
     background-color: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 20px 20px 10px 10px;
-    padding: var(--space-md) var(--space-lg);
+    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-decoration: none;
-    height: 105px;
+    height: 155px;
+    overflow: hidden;
     transition: all var(--transition-smooth);
 }
 
 .hero-service-card:hover {
     transform: translateY(-4px);
-    background-color: rgba(0, 197, 138, 0.08);
     border-color: var(--color-mint);
     box-shadow: 0 10px 25px rgba(0, 197, 138, 0.12);
 }
 
-.service-card-icon {
-    font-size: 1.5rem;
-    margin-bottom: var(--space-xs);
-    display: inline-block;
-    transition: transform var(--transition-smooth);
+.service-arch-wrapper {
+    width: 100%;
+    height: 115px;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+}
+
+.service-arch-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
 }
 
 .service-card-title {
     font-family: var(--font-serif);
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: 600;
     font-style: italic;
     color: var(--color-white);
+    margin: var(--space-xs) 0;
+    display: block;
     transition: color var(--transition-smooth);
 }
 
-.hero-service-card:hover .service-card-icon {
-    transform: scale(1.15) translateY(-2px);
+.hero-service-card:hover img {
+    transform: scale(1.06);
 }
 
 .hero-service-card:hover .service-card-title {
@@ -2358,18 +2367,19 @@ p {
     }
 
     .hero-service-card {
-        height: 80px;
-        padding: var(--space-xs) var(--space-sm);
+        height: 120px;
+        padding: 0;
         border-radius: 16px 16px 8px 8px;
     }
 
-    .service-card-icon {
-        font-size: 1.25rem;
-        margin-bottom: 2px;
+    .service-arch-wrapper {
+        height: 85px;
+        border-radius: 16px 16px 0 0;
     }
 
     .service-card-title {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
+        margin: 4px 0;
     }
 
     .hero-services-title {
