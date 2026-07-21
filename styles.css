@@ -594,9 +594,111 @@ p {
     z-index: 10;
 }
 
-.hero-bottom-curve-container .trust-badges-row {
-    margin-top: var(--space-xl);
-    margin-bottom: 0;
+/* Hero Services Grid (Choose Your Format) */
+.hero-services-section {
+    margin-top: var(--space-xxl);
+}
+
+.hero-services-title {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: rgba(250, 253, 251, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    text-align: center;
+    margin-bottom: var(--space-xl);
+}
+
+.hero-services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+    padding: 0 var(--space-md);
+}
+
+.hero-service-card {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 36px 36px 16px 16px;
+    padding: var(--space-xl) var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all var(--transition-smooth);
+}
+
+.hero-service-card:hover {
+    transform: translateY(-6px);
+    background-color: rgba(255, 255, 255, 0.04);
+    border-color: var(--color-mint);
+    box-shadow: 0 12px 30px rgba(0, 197, 138, 0.12);
+}
+
+.service-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: rgba(0, 197, 138, 0.08);
+    color: var(--color-mint);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-lg);
+}
+
+.service-meta-tag {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.35);
+    letter-spacing: 0.06em;
+    margin-bottom: var(--space-xs);
+    text-transform: uppercase;
+}
+
+.service-card-title {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--color-white);
+    margin-bottom: var(--space-xs);
+}
+
+.service-card-text {
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    line-height: 1.5;
+    color: rgba(250, 253, 251, 0.7);
+    margin-bottom: var(--space-lg);
+    flex-grow: 1;
+}
+
+.service-card-link {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--color-mint);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: var(--transition-smooth);
+}
+
+.service-card-link .arrow {
+    transition: transform var(--transition-smooth);
+}
+
+.hero-service-card:hover .service-card-link {
+    color: var(--color-white);
+}
+
+.hero-service-card:hover .service-card-link .arrow {
+    transform: translateX(4px);
 }
 
 /* Floating Search Capsule */
@@ -2257,27 +2359,30 @@ p {
         display: none; /* Hide scrollbar Chrome/Safari */
     }
 
-    .explorer-grid {
+    .hero-services-grid {
         display: flex;
-        gap: 1rem;
-        padding: 0 5%; /* Align cards with container */
-        max-width: none;
-        margin: 0;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: var(--space-md);
+        padding: 0 var(--space-md) var(--space-lg) var(--space-md);
+        margin-left: calc(-1 * var(--space-md));
+        margin-right: calc(-1 * var(--space-md));
+        scrollbar-width: none;
     }
 
-    .explorer-card {
-        width: 110px;
-        flex-shrink: 0;
+    .hero-services-grid::-webkit-scrollbar {
+        display: none;
     }
 
-    .explorer-arch-wrapper {
-        border-radius: 24px 24px 0 0;
-        border-width: 1px;
+    .hero-service-card {
+        flex: 0 0 280px;
+        scroll-snap-align: start;
+        border-radius: 28px 28px 14px 14px;
+        padding: var(--space-lg) var(--space-md);
     }
 
-    .hero-bottom-curve-container .trust-badges-row {
-        margin-top: var(--space-lg);
-        padding: 0 var(--space-md);
+    .hero-services-title {
+        margin-bottom: var(--space-lg);
     }
 
     .trust-badges-pill {
