@@ -600,14 +600,14 @@ p {
 }
 
 .hero-services-title {
-    font-family: var(--font-sans);
-    font-size: 0.8rem;
-    font-weight: 800;
-    color: rgba(250, 253, 251, 0.35);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+    font-family: var(--font-serif);
+    font-size: 1.45rem;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--color-white);
     text-align: center;
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-lg);
+    text-shadow: 0 1px 4px rgba(5, 34, 23, 0.3);
 }
 
 .hero-services-grid {
@@ -653,24 +653,45 @@ p {
     transition: transform 0.6s ease;
 }
 
-.service-icon-overlay {
+.service-badge {
     position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    background-color: rgba(5, 34, 23, 0.4);
-    transition: background-color var(--transition-smooth);
+    left: var(--space-sm);
+    bottom: var(--space-sm);
+    background-color: rgba(5, 34, 23, 0.7);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    color: var(--color-mint);
+    border: 1px solid rgba(0, 197, 138, 0.25);
+    border-radius: var(--border-radius-sm);
+    padding: 0.2rem 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    pointer-events: none;
+    transition: all var(--transition-smooth);
+    z-index: 2;
 }
 
 .service-card-title {
     font-family: var(--font-serif);
-    font-size: 1.125rem;
+    font-size: 1.15rem;
     font-weight: 600;
     font-style: italic;
     color: var(--color-white);
-    margin: var(--space-sm) 0;
+    margin: var(--space-xs) 0 2px 0;
+    display: block;
+    transition: color var(--transition-smooth);
+}
+
+.service-card-sub {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: var(--space-md);
     display: block;
     transition: color var(--transition-smooth);
 }
@@ -679,12 +700,18 @@ p {
     transform: scale(1.06);
 }
 
-.hero-service-card:hover .service-icon-overlay {
-    background-color: rgba(0, 197, 138, 0.12);
+.hero-service-card:hover .service-badge {
+    background-color: var(--color-mint);
+    color: var(--color-emerald-dark);
+    border-color: var(--color-mint);
 }
 
 .hero-service-card:hover .service-card-title {
     color: var(--color-mint);
+}
+
+.hero-service-card:hover .service-card-sub {
+    color: rgba(255, 255, 255, 0.75);
 }
 
 /* Floating Search Capsule */
