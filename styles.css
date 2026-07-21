@@ -459,6 +459,11 @@ p {
     overflow: hidden;
     padding: 0;
     width: 100%;
+    height: 100vh;
+    min-height: 680px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* Background gradient effect */
@@ -484,13 +489,15 @@ p {
 
 /* Banner Card */
 .hero-banner-card {
-    position: relative;
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: 440px;
+    height: 100%;
     border-radius: 0;
     overflow: hidden;
     border: none;
     box-shadow: none;
+    z-index: 1;
 }
 
 .hero-banner-bg {
@@ -528,16 +535,16 @@ p {
     height: 100%;
     position: relative;
     z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-banner-content {
-    position: absolute;
-    bottom: 7rem;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
+    position: relative;
     max-width: 850px;
     text-align: center;
+    margin-top: -80px; /* Offset upward away from bottom curve */
 }
 
 .hero-banner-content .field-log-badge {
@@ -588,9 +595,11 @@ p {
     border-top: 2px dashed rgba(0, 197, 138, 0.2);
     border-radius: 60px 60px 0 0;
     width: 100%;
-    margin-top: -48px; /* Overlap the hero banner card bottom boundary */
-    padding: 0 0 var(--space-xxl) 0;
-    position: relative;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0 0 var(--space-xl) 0;
     z-index: 10;
 }
 
@@ -2275,17 +2284,29 @@ p {
 
     .hero-section {
         padding: 0;
+        height: auto;
+        min-height: auto;
+        display: block;
     }
 
     .hero-banner-card {
+        position: relative;
         height: 380px;
         border-radius: 0;
     }
 
+    .hero-banner-container {
+        height: 100%;
+        display: block;
+    }
+
     .hero-banner-content {
+        position: absolute;
+        bottom: 4.5rem;
         left: 0;
         right: 0;
-        bottom: 4.5rem;
+        margin: 0 auto;
+        margin-top: 0;
     }
 
     .hero-banner-caption {
@@ -2297,6 +2318,10 @@ p {
     }
 
     .hero-bottom-curve-container {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        right: auto;
         border-radius: 36px 36px 0 0;
         margin-top: -36px;
         padding-bottom: var(--space-xl);
