@@ -486,7 +486,7 @@ p {
 .hero-banner-card {
     position: relative;
     width: 100%;
-    height: 520px;
+    height: 440px;
     border-radius: 0;
     overflow: hidden;
     border: none;
@@ -596,109 +596,95 @@ p {
 
 /* Hero Services Grid (Choose Your Format) */
 .hero-services-section {
-    margin-top: var(--space-xxl);
+    margin-top: var(--space-lg);
 }
 
 .hero-services-title {
     font-family: var(--font-sans);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 800;
-    color: rgba(250, 253, 251, 0.4);
+    color: rgba(250, 253, 251, 0.35);
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
     text-align: center;
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-md);
 }
 
 .hero-services-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-lg);
+    gap: var(--space-md);
     padding: 0 var(--space-md);
 }
 
 .hero-service-card {
     background-color: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 36px 36px 16px 16px;
-    padding: var(--space-xl) var(--space-lg);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 32px 32px 14px 14px;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-decoration: none;
+    overflow: hidden;
     transition: all var(--transition-smooth);
 }
 
 .hero-service-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-4px);
     background-color: rgba(255, 255, 255, 0.04);
     border-color: var(--color-mint);
-    box-shadow: 0 12px 30px rgba(0, 197, 138, 0.12);
+    box-shadow: 0 10px 25px rgba(0, 197, 138, 0.1);
 }
 
-.service-icon-box {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background-color: rgba(0, 197, 138, 0.08);
-    color: var(--color-mint);
+.service-arch-wrapper {
+    width: 100%;
+    height: 125px;
+    border-radius: 30px 30px 0 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.service-arch-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.service-icon-overlay {
+    position: absolute;
+    inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: var(--space-lg);
-}
-
-.service-meta-tag {
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.35);
-    letter-spacing: 0.06em;
-    margin-bottom: var(--space-xs);
-    text-transform: uppercase;
+    font-size: 1.5rem;
+    background-color: rgba(5, 34, 23, 0.4);
+    transition: background-color var(--transition-smooth);
 }
 
 .service-card-title {
     font-family: var(--font-serif);
-    font-size: 1.35rem;
+    font-size: 1.125rem;
     font-weight: 600;
     font-style: italic;
     color: var(--color-white);
-    margin-bottom: var(--space-xs);
+    margin: var(--space-sm) 0;
+    display: block;
+    transition: color var(--transition-smooth);
 }
 
-.service-card-text {
-    font-family: var(--font-sans);
-    font-size: var(--fs-caption);
-    line-height: 1.5;
-    color: rgba(250, 253, 251, 0.7);
-    margin-bottom: var(--space-lg);
-    flex-grow: 1;
+.hero-service-card:hover img {
+    transform: scale(1.06);
 }
 
-.service-card-link {
-    font-family: var(--font-sans);
-    font-size: 0.75rem;
-    font-weight: 800;
+.hero-service-card:hover .service-icon-overlay {
+    background-color: rgba(0, 197, 138, 0.12);
+}
+
+.hero-service-card:hover .service-card-title {
     color: var(--color-mint);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-    transition: var(--transition-smooth);
-}
-
-.service-card-link .arrow {
-    transition: transform var(--transition-smooth);
-}
-
-.hero-service-card:hover .service-card-link {
-    color: var(--color-white);
-}
-
-.hero-service-card:hover .service-card-link .arrow {
-    transform: translateX(4px);
 }
 
 /* Floating Search Capsule */
@@ -2375,14 +2361,19 @@ p {
     }
 
     .hero-service-card {
-        flex: 0 0 280px;
+        flex: 0 0 160px;
         scroll-snap-align: start;
-        border-radius: 28px 28px 14px 14px;
-        padding: var(--space-lg) var(--space-md);
+        border-radius: 24px 24px 12px 12px;
+        padding: 0;
+    }
+
+    .service-arch-wrapper {
+        height: 105px;
+        border-radius: 24px 24px 0 0;
     }
 
     .hero-services-title {
-        margin-bottom: var(--space-lg);
+        margin-bottom: var(--space-md);
     }
 
     .trust-badges-pill {
