@@ -594,6 +594,11 @@ p {
     z-index: 10;
 }
 
+.hero-bottom-curve-container .trust-badges-row {
+    margin-top: var(--space-xl);
+    margin-bottom: 0;
+}
+
 /* Floating Search Capsule */
 .search-capsule {
     background-color: var(--color-white);
@@ -2270,8 +2275,9 @@ p {
         border-width: 1px;
     }
 
-    .hero-vibe-explorer {
-        margin-top: var(--space-xl);
+    .hero-bottom-curve-container .trust-badges-row {
+        margin-top: var(--space-lg);
+        padding: 0 var(--space-md);
     }
 
     .trust-badges-pill {
