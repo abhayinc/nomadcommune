@@ -629,70 +629,133 @@ p {
     padding: 0 var(--space-md);
 }
 
-.hero-service-pill {
+.hero-service-ticket {
     background-color: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 50px; /* Fully rounded capsule pill shape */
-    padding: 0.85rem var(--space-lg);
+    border-radius: 18px;
+    padding: 1.15rem;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 165px;
     text-decoration: none;
+    position: relative;
+    overflow: hidden;
     transition: all var(--transition-smooth);
 }
 
-.hero-service-pill:hover {
-    transform: translateY(-3px);
-    background-color: rgba(0, 197, 138, 0.08);
+.hero-service-ticket:hover {
+    transform: translateY(-4px);
+    background-color: rgba(255, 255, 255, 0.04);
     border-color: var(--color-mint);
-    box-shadow: 0 8px 24px rgba(0, 197, 138, 0.12);
+    box-shadow: 0 12px 30px rgba(0, 197, 138, 0.15);
 }
 
-.service-pill-num {
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.ticket-icon {
+    font-size: 1.25rem;
+}
+
+.ticket-code {
     font-family: var(--font-mono);
-    font-size: 0.68rem;
+    font-size: 0.65rem;
     font-weight: 700;
     color: rgba(255, 255, 255, 0.3);
-    margin-right: var(--space-sm);
-    display: inline-block;
+    letter-spacing: 0.05em;
 }
 
-.service-pill-icon {
-    font-size: 1.15rem;
-    margin-right: var(--space-md);
-    display: inline-block;
-}
-
-.service-pill-text {
+.ticket-body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-top: 0.4rem;
+    flex-grow: 1;
 }
 
-.service-pill-title {
+.ticket-title {
     font-family: var(--font-serif);
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     font-weight: 600;
     font-style: italic;
     color: var(--color-white);
-    line-height: 1.2;
+    margin-bottom: 2px;
     transition: color var(--transition-smooth);
 }
 
-.service-pill-desc {
+.ticket-hook {
     font-family: var(--font-sans);
-    font-size: 0.68rem;
+    font-size: 0.72rem;
     color: rgba(255, 255, 255, 0.45);
-    margin-top: 2px;
-    line-height: 1.2;
+    line-height: 1.25;
+}
+
+.ticket-stub-line {
+    border-top: 1px dashed rgba(255, 255, 255, 0.12);
+    margin: var(--space-xs) 0;
+    width: 100%;
+    position: relative;
+    transition: border-color var(--transition-smooth);
+}
+
+.ticket-stub-line::before, .ticket-stub-line::after {
+    content: "";
+    position: absolute;
+    top: -6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--color-emerald-dark);
+    transition: background-color var(--transition-smooth);
+}
+
+.ticket-stub-line::before {
+    left: -24px;
+}
+
+.ticket-stub-line::after {
+    right: -24px;
+}
+
+.ticket-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.ticket-class {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.25);
+    letter-spacing: 0.05em;
+}
+
+.ticket-action {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--color-mint);
+    letter-spacing: 0.05em;
     transition: color var(--transition-smooth);
 }
 
-.hero-service-pill:hover .service-pill-title {
+.hero-service-ticket:hover .ticket-title {
     color: var(--color-mint);
 }
 
-.hero-service-pill:hover .service-pill-desc {
-    color: rgba(255, 255, 255, 0.75);
+.hero-service-ticket:hover .ticket-stub-line {
+    border-color: rgba(0, 197, 138, 0.35);
+}
+
+.hero-service-ticket:hover .ticket-action {
+    color: var(--color-white);
 }
 
 /* Floating Search Capsule */
@@ -2378,23 +2441,43 @@ p {
         margin-right: 0;
     }
 
-    .hero-service-pill {
-        padding: 0.6rem var(--space-md);
-        border-radius: 30px;
+    .hero-service-ticket {
+        height: 145px;
+        padding: 0.85rem;
+        border-radius: 12px;
     }
 
-    .service-pill-icon {
-        margin-right: var(--space-sm);
+    .ticket-icon {
         font-size: 1rem;
     }
 
-    .service-pill-title {
+    .ticket-code {
+        font-size: 0.55rem;
+    }
+
+    .ticket-title {
         font-size: 0.95rem;
     }
 
-    .service-pill-desc {
+    .ticket-hook {
         font-size: 0.62rem;
-        margin-top: 1px;
+        line-height: 1.15;
+    }
+
+    .ticket-class {
+        font-size: 0.55rem;
+    }
+
+    .ticket-action {
+        font-size: 0.55rem;
+    }
+
+    .ticket-stub-line::before {
+        left: -20px;
+    }
+
+    .ticket-stub-line::after {
+        right: -20px;
     }
 
     .hero-services-title {
