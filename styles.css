@@ -604,7 +604,7 @@ p {
     gap: 0.5rem;
     box-shadow: var(--shadow-medium);
     width: 90%;
-    max-width: 750px;
+    max-width: 560px;
     margin: -28px auto 0 auto; /* Centered exactly on the curved border line */
     position: relative;
     z-index: 12;
