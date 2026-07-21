@@ -13,13 +13,8 @@
     <meta property="og:image" content="images/misty_meadow.png">
     <meta property="og:type" content="website">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=2.2">
+    <link rel="stylesheet" href="styles.css?v=3.0">
 </head>
 <body>
     <!-- Film Grain Overlay -->
@@ -33,10 +28,11 @@
             </a>
             <nav class="nav-links">
                 <a href="#manifesto" class="nav-link">Manifesto</a>
+                <a href="#outposts" class="nav-link">Outposts</a>
                 <a href="#pillars" class="nav-link">Pillars</a>
-                <a href="#comparison" class="nav-link">Reality</a>
+                <a href="#reality" class="nav-link">Reality</a>
                 <a href="#scorecard" class="nav-link">Audits</a>
-                <a href="#live-feed" class="nav-link">Dispatches</a>
+                <a href="#stories" class="nav-link">Stories</a>
             </nav>
             <a href="#join" class="btn btn-primary nav-cta">Request Early Access</a>
             <button class="mobile-nav-toggle" aria-label="Toggle navigation">
@@ -50,10 +46,11 @@
     <div class="mobile-nav-drawer">
         <nav class="mobile-nav-links">
             <a href="#manifesto" class="mobile-link">Manifesto</a>
+            <a href="#outposts" class="mobile-link">Outposts</a>
             <a href="#pillars" class="mobile-link">Pillars</a>
-            <a href="#comparison" class="mobile-link">Reality</a>
+            <a href="#reality" class="mobile-link">Reality</a>
             <a href="#scorecard" class="mobile-link">Audits</a>
-            <a href="#live-feed" class="mobile-link">Dispatches</a>
+            <a href="#stories" class="mobile-link">Stories</a>
             <a href="#join" class="btn btn-primary mobile-cta">Request Early Access</a>
         </nav>
     </div>
@@ -62,59 +59,128 @@
     <main>
         <!-- Hero Section -->
         <section class="hero-section">
-            <!-- Mobile-first hero image banner (visible only on mobile) -->
-            <div class="hero-mobile-banner">
-                <img src="images/misty_meadow.png" alt="A quiet wooden table in a foggy pine forest" class="hero-banner-img">
+            <!-- Immersive Hero Banner Card (Full-Bleed) -->
+            <div class="hero-banner-card">
+                <img src="images/misty_meadow.png" alt="A quiet wooden table in a foggy pine forest" class="hero-banner-bg">
                 <div class="hero-banner-overlay"></div>
-                <div class="hero-banner-content">
-                    <div class="field-log-badge badge-light"><span class="pulse-dot"></span>FIELD REPORT LOG // 01</div>
-                    <h1 class="hero-title hero-title-overlay">Trade city traffic for mountain mist.</h1>
-                </div>
-                <div class="hero-banner-caption">
-                    <span class="caption-location"><span class="icon-marker"></span>Himalayan Outpost, HP</span>
-                    <span class="caption-coords">32.24° N, 77.19° E</span>
+                <div class="hero-banner-container">
+                    <div class="hero-banner-content">
+                        <h1 class="hero-banner-title">Trade city traffic for mountain mist.</h1>
+                    </div>
+                    <div class="hero-banner-caption">
+                        <span>📍 Himalayan Outpost, HP</span>
+                        <span>32.2396° N, 77.1887° E &mdash; BSNL Fiber: 85 Mbps</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="section-container hero-grid">
-                <!-- Desktop hero content (text side) -->
-                <div class="hero-content">
-                    <div class="field-log-badge hero-desktop-badge"><span class="pulse-dot"></span>FIELD REPORT LOG // 01</div>
-                    <h1 class="hero-title hero-desktop-title">Trade city traffic for mountain mist.</h1>
-                    <p class="hero-description">
-                        The corporate handbook says "work from home." We heard "work from anywhere that makes you feel alive." Nomad Commune is a vetted network of workspaces, off-grid cabins, and remote professionals who choose local culture over generic hotel lobbies.
-                    </p>
-                    
-                    <div class="hero-cta-group">
-                        <form id="hero-signup" class="newsletter-form">
-                            <div class="input-wrapper">
-                                <input type="email" placeholder="Enter your email for early access" required class="form-input">
-                                <button type="submit" class="btn btn-secondary">Request Invite</button>
-                            </div>
-                            <p class="form-subtext">Priority bookings given to creators, designers, developers, and independent builders.</p>
-                        </form>
-                        <div id="signup-success" class="signup-success-toast hidden">
-                            <svg class="success-icon" viewBox="0 0 24 24" width="24" height="24">
-                                <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
-                                <path d="M8 12.5l3 3 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                            <div>
-                                <h4>Transmission Received</h4>
-                                <p>You're logged on the waitlist. Keep an eye on your inbox for our upcoming bookings.</p>
-                            </div>
+            <!-- Hero Bottom Curve Container (Upward arch, balances visual weight) -->
+            <div class="hero-bottom-curve-container">
+                <!-- Floating Search Capsule -->
+                <form class="search-capsule" onsubmit="event.preventDefault();">
+                    <div class="search-field">
+                        <label for="destination">Where to?</label>
+                        <select id="destination">
+                            <option value="all">Any Outpost</option>
+                            <option value="himachal">Himachal Pradesh</option>
+                            <option value="uttarakhand">Uttarakhand</option>
+                            <option value="rajasthan">Rajasthan</option>
+                            <option value="mp">Madhya Pradesh</option>
+                        </select>
+                    </div>
+                    <div class="search-field">
+                        <label for="infra">Setup</label>
+                        <select id="infra">
+                            <option value="all">Any Vetted Setup</option>
+                            <option value="fiber">Fiber Internet</option>
+                            <option value="backup">Power Backup</option>
+                            <option value="detox">Digital Detox</option>
+                        </select>
+                    </div>
+                    <div class="search-field">
+                        <label for="month">When?</label>
+                        <select id="month">
+                            <option value="aug">August 2026</option>
+                            <option value="sep">September 2026</option>
+                            <option value="oct">October 2026</option>
+                            <option value="nov">November 2026</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="search-btn" aria-label="Search Outposts">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                </form>
+
+                <!-- Selective Vibe Explorer (Aligned to standard container width) -->
+                <div class="section-container hero-vibe-explorer">
+                    <h3 class="vibe-explorer-title">What is your vibe?</h3>
+                    <div class="explorer-grid-wrapper">
+                        <div class="explorer-grid">
+                            <a href="#scorecard" class="explorer-card" onclick="document.querySelector('[data-location=\'munsiyari\']').click();">
+                                <div class="explorer-arch-wrapper">
+                                    <img src="images/mud_house.png" alt="Mountain Vibe">
+                                </div>
+                                <span>Mountain</span>
+                            </a>
+                            <a href="#scorecard" class="explorer-card" onclick="document.querySelector('[data-location=\'jibhi\']').click();">
+                                <div class="explorer-arch-wrapper">
+                                    <img src="images/jibhi_cabin.png" alt="Forest Vibe">
+                                </div>
+                                <span>Forest</span>
+                            </a>
+                            <a href="#scorecard" class="explorer-card" onclick="document.querySelector('[data-location=\'khuri\']').click();">
+                                <div class="explorer-arch-wrapper">
+                                    <img src="images/desert_camp.png" alt="Desert Vibe">
+                                </div>
+                                <span>Desert</span>
+                            </a>
+                            <a href="#scorecard" class="explorer-card" onclick="document.querySelector('[data-location=\'orchha\']').click();">
+                                <div class="explorer-arch-wrapper">
+                                    <img src="images/orchha_heritage.png" alt="Heritage Vibe">
+                                </div>
+                                <span>Heritage</span>
+                            </a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Desktop hero image (Polaroid frame, hidden on mobile) -->
-                <div class="hero-media-wrapper">
-                    <div class="film-photo-container">
-                        <img src="images/misty_meadow.png" alt="A quiet wooden table in a foggy pine forest" class="hero-image">
-                        <div class="film-caption">
-                            <span class="caption-location"><span class="icon-marker"></span>Himalayan Outpost, HP</span>
-                            <span class="caption-coords">32.2396° N, 77.1887° E</span>
-                            <span class="caption-stats">BSNL Fiber: 85 Mbps</span>
-                        </div>
+            </div>
+        </section>
+
+        <!-- Trust Badges Pill Banner -->
+        <section class="section-container trust-badges-row">
+            <div class="trust-badges-pill">
+                <div class="trust-badge-item">
+                    <span class="trust-icon">🚀</span>
+                    <div class="trust-text">
+                        <h4>100% Vetted Wifi</h4>
+                        <p>Power backup & dual ISPs</p>
+                    </div>
+                </div>
+                <div class="trust-divider"></div>
+                <div class="trust-badge-item">
+                    <span class="trust-icon">🏔️</span>
+                    <div class="trust-text">
+                        <h4>Off-Grid Outposts</h4>
+                        <p>No hectic tourist crowds</p>
+                    </div>
+                </div>
+                <div class="trust-divider"></div>
+                <div class="trust-badge-item">
+                    <span class="trust-icon">👥</span>
+                    <div class="trust-text">
+                        <h4>Curated Circles</h4>
+                        <p>Build alongside creators</p>
+                    </div>
+                </div>
+                <div class="trust-divider"></div>
+                <div class="trust-badge-item">
+                    <span class="trust-icon">🌟</span>
+                    <div class="trust-text">
+                        <h4>4.9/5 Vibe Score</h4>
+                        <p>Audited for deep focus</p>
                     </div>
                 </div>
             </div>
@@ -140,8 +206,99 @@
             </div>
         </section>
 
+        <!-- Recently Booked Outposts Section -->
+        <section id="outposts" class="stays-section">
+            <div class="section-container">
+                <div class="section-header text-center">
+                    <span class="section-label">[ VETTED OUTPOSTS ]</span>
+                    <h2 class="section-title">Recently Booked Workstations</h2>
+                    <p class="section-subtitle">Stays verified by remote professionals. Ready for deep focused work sprints.</p>
+                </div>
+                
+                <div class="stays-grid">
+                    <!-- Stay Card 1 -->
+                    <div class="stay-card">
+                        <div class="stay-media-wrapper">
+                            <img src="images/mud_house.png" alt="Munsiyari Mud-House">
+                            <div class="stay-badges-overlay">
+                                <span class="stay-badge badge-vetted">Vetted Stay</span>
+                                <span class="stay-badge badge-speed">85 Mbps Fiber</span>
+                            </div>
+                        </div>
+                        <div class="stay-content">
+                            <div class="stay-meta-row">
+                                <span class="stay-loc-type">Munsiyari, UK</span>
+                                <span class="stay-rating"><span class="star">★</span> 4.9 (42)</span>
+                            </div>
+                            <h3 class="stay-card-title">Munsiyari Mud-House</h3>
+                            <p class="stay-desc">Traditional thick mud walls overlooking Himalayan peaks. Dual ISP backup with a cozy community firewood stove.</p>
+                            <div class="stay-footer">
+                                <div class="stay-price">
+                                    <span class="price-label">Starts from</span>
+                                    <span class="price-value">₹1,800/night</span>
+                                </div>
+                                <a href="#join" class="btn btn-primary stay-cta-btn">Book Space</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stay Card 2 -->
+                    <div class="stay-card">
+                        <div class="stay-media-wrapper">
+                            <img src="images/jibhi_cabin.png" alt="Jibhi River Cabin">
+                            <div class="stay-badges-overlay">
+                                <span class="stay-badge badge-vetted">Vetted Stay</span>
+                                <span class="stay-badge badge-speed">55 Mbps Wifi</span>
+                            </div>
+                        </div>
+                        <div class="stay-content">
+                            <div class="stay-meta-row">
+                                <span class="stay-loc-type">Jibhi, HP</span>
+                                <span class="stay-rating"><span class="star">★</span> 4.8 (29)</span>
+                            </div>
+                            <h3 class="stay-card-title">Jibhi River Cabin</h3>
+                            <p class="stay-desc">Rustic wooden panels right next to a mountain stream. Equipped with backup routers, communal kitchen and local hosts.</p>
+                            <div class="stay-footer">
+                                <div class="stay-price">
+                                    <span class="price-label">Starts from</span>
+                                    <span class="price-value">₹2,100/night</span>
+                                </div>
+                                <a href="#join" class="btn btn-primary stay-cta-btn">Book Space</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stay Card 3 -->
+                    <div class="stay-card">
+                        <div class="stay-media-wrapper">
+                            <img src="images/orchha_heritage.png" alt="Orchha Fort Homestay">
+                            <div class="stay-badges-overlay">
+                                <span class="stay-badge badge-vetted">Vetted Stay</span>
+                                <span class="stay-badge badge-speed">48 Mbps Fiber</span>
+                            </div>
+                        </div>
+                        <div class="stay-content">
+                            <div class="stay-meta-row">
+                                <span class="stay-loc-type">Orchha, MP</span>
+                                <span class="stay-rating"><span class="star">★</span> 4.7 (18)</span>
+                            </div>
+                            <h3 class="stay-card-title">Orchha Heritage Balcony</h3>
+                            <p class="stay-desc">Historic homestay overlooking ancient monuments. Restored stone pillars and low-latency WiFi backed by hybrid solar cells.</p>
+                            <div class="stay-footer">
+                                <div class="stay-price">
+                                    <span class="price-label">Starts from</span>
+                                    <span class="price-value">₹1,500/night</span>
+                                </div>
+                                <a href="#join" class="btn btn-primary stay-cta-btn">Book Space</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Expectation vs Reality Section -->
-        <section id="comparison" class="comparison-section">
+        <section id="reality" class="comparison-section">
             <div class="section-container">
                 <div class="section-header text-center">
                     <span class="section-label">[ REALITY CHECK ]</span>
@@ -178,12 +335,12 @@
                 </div>
                 
                 <div class="slider-caption">
-                    <span class="caption-icon">*</span> Note: Both images are unedited film snapshots. Mainstream resorts block out the crowds, we walk away from them.
+                    <span class="caption-icon">*</span> Note: Both images are unedited snapshots. Mainstream resorts block out the crowds, we walk away from them.
                 </div>
             </div>
         </section>
 
-        <!-- The Four Pillars Section (Asymmetrical Editorial Layout) -->
+        <!-- The Four Pillars Section -->
         <section id="pillars" class="pillars-section">
             <div class="section-container">
                 <div class="section-header">
@@ -386,8 +543,101 @@
             </div>
         </section>
 
+        <!-- Stories of our Travellers Section -->
+        <section id="stories" class="stories-section">
+            <div class="section-container">
+                <div class="section-header text-center">
+                    <span class="section-label">[ COMMUNE TESTIMONIALS ]</span>
+                    <h2 class="section-title">Stories of Our Travellers ❤️</h2>
+                    <p class="section-subtitle">Read how remote developers, designers, and founders thrive in our vetted wild outposts.</p>
+                </div>
+                
+                <div class="stories-grid">
+                    <!-- Traveller 1 -->
+                    <div class="story-card">
+                        <div class="story-image-arch">
+                            <img src="images/mud_house.png" alt="Devang P.">
+                        </div>
+                        <p class="story-quote">"BSNL Fiber was surprisingly solid. Wrote three service components sitting by the stream."</p>
+                        <h4 class="story-author">Devang P.</h4>
+                        <span class="story-role">iOS Architect</span>
+                    </div>
+
+                    <!-- Traveller 2 -->
+                    <div class="story-card">
+                        <div class="story-image-arch">
+                            <img src="images/desert_camp.png" alt="Sarah M.">
+                        </div>
+                        <p class="story-quote">"Zero city hum. Set up my chair by the wood fire and rewrote the entire database mapping logic."</p>
+                        <h4 class="story-author">Sarah M.</h4>
+                        <span class="story-role">Founder, Tech Startup</span>
+                    </div>
+
+                    <!-- Traveller 3 -->
+                    <div class="story-card">
+                        <div class="story-image-arch">
+                            <img src="images/orchha_heritage.png" alt="Rohit K.">
+                        </div>
+                        <p class="story-quote">"Working against stone balconies carved 400 years ago is a massive contrast to my usual glass cubicle."</p>
+                        <h4 class="story-author">Rohit K.</h4>
+                        <span class="story-role">Lead UI Designer</span>
+                    </div>
+
+                    <!-- Traveller 4 -->
+                    <div class="story-card">
+                        <div class="story-image-arch">
+                            <img src="images/jibhi_cabin.png" alt="Anjali S.">
+                        </div>
+                        <p class="story-quote">"Jibhi cabins are magic. The sound of stream water plus reliable ping under 40ms is a developer dream."</p>
+                        <h4 class="story-author">Anjali S.</h4>
+                        <span class="story-role">Systems Engineer</span>
+                    </div>
+
+                    <!-- Traveller 5 -->
+                    <div class="story-card">
+                        <div class="story-image-arch">
+                            <img src="images/misty_meadow.png" alt="Kabir B.">
+                        </div>
+                        <p class="story-quote">"The quiet and clean mountain mist let me finish drafting our entire community playbook in a week."</p>
+                        <h4 class="story-author">Kabir B.</h4>
+                        <span class="story-role">Writer & Content Scout</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Promotional Expedition Banners Section -->
+        <section class="promo-banners-row">
+            <div class="section-container promo-grid">
+                <!-- Promo 1 -->
+                <div class="promo-banner-card">
+                    <div class="promo-banner-content">
+                        <span class="promo-tag">Featured Expedition</span>
+                        <h3 class="promo-title">Uttarakhand Valley Scout</h3>
+                        <p class="promo-desc">Scout out mountain outposts and local village trails with local trackers. Starting Sept 12.</p>
+                        <a href="#join" class="btn btn-primary promo-btn">Join Waitlist</a>
+                    </div>
+                    <div class="promo-banner-img">
+                        <img src="images/mud_house.png" alt="Scout Valley">
+                    </div>
+                </div>
+                <!-- Promo 2 -->
+                <div class="promo-banner-card">
+                    <div class="promo-banner-content">
+                        <span class="promo-tag">Active Camp</span>
+                        <h3 class="promo-title">Rajasthan Desert Glamping</h3>
+                        <p class="promo-desc">Glamp under the Thar Milky Way while building offline projects in deep dune circles. Starting Oct 5.</p>
+                        <a href="#join" class="btn btn-primary promo-btn">Join Waitlist</a>
+                    </div>
+                    <div class="promo-banner-img">
+                        <img src="images/desert_camp.png" alt="Desert Camp">
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- "From the Road" Live Feed (Scrapbook Layout) -->
-        <section id="live-feed" class="live-feed-section">
+        <section id="dispatches" class="live-feed-section">
             <div class="section-container">
                 <div class="section-header text-center">
                     <span class="section-label">[ FIELD DISPATCHES ]</span>
@@ -417,7 +667,7 @@
                     <div class="scrapbook-card-item tilt-right">
                         <div class="scrapbook-img-holder">
                             <img src="images/desert_camp.png" alt="Desert campsite under stars in Khuri">
-                            <div class="scrapbook-tape tape-dark"></div>
+                            <div class="scrapbook-tape"></div>
                             <span class="field-label-mono">LOG_KHR_04</span>
                         </div>
                         <div class="scrapbook-meta">
@@ -454,7 +704,7 @@
         <section id="join" class="cta-section">
             <div class="section-container">
                 <div class="cta-box">
-                    <span class="section-label text-white">// EARLY ACCESS REQUEST</span>
+                    <span class="section-label" style="color: var(--color-mint)">// EARLY ACCESS REQUEST</span>
                     <h2 class="cta-title">Leave the corporate retreats behind.</h2>
                     <p class="cta-description">
                         We are opening booking rosters for our next Off-Grid Expedition in Uttarakhand soon. Join the waitlist for member rates and vetted setups.
@@ -462,9 +712,9 @@
                     <form id="footer-signup" class="newsletter-form">
                         <div class="input-wrapper">
                             <input type="email" placeholder="Enter your email address" required class="form-input">
-                            <button type="submit" class="btn btn-secondary">Request Waitlist Invite</button>
+                            <button type="submit" class="btn btn-primary">Request Waitlist Invite</button>
                         </div>
-                        <p class="form-subtext text-center text-light">Invites sent in weekly batches. Priority given to remote professionals, designers, and developers.</p>
+                        <p class="form-subtext">Invites sent in weekly batches. Priority given to remote professionals, designers, and developers.</p>
                     </form>
                     <div id="footer-success" class="signup-success-toast hidden">
                         <svg class="success-icon" viewBox="0 0 24 24" width="24" height="24">
@@ -483,8 +733,18 @@
 
     <!-- Footer -->
     <footer class="main-footer">
-        <!-- Top accent line -->
-        <div class="footer-accent-bar"></div>
+        <!-- Partner Monochrome Logos Bar -->
+        <div class="partner-logos-bar">
+            <div class="section-container">
+                <div class="partner-logos-grid">
+                    <span class="partner-logo-item">💼 product hunt</span>
+                    <span class="partner-logo-item">🌍 remote.co</span>
+                    <span class="partner-logo-item">⚙️ hacker news</span>
+                    <span class="partner-logo-item">⚡ tech in asia</span>
+                    <span class="partner-logo-item">🚀 y combinator</span>
+                </div>
+            </div>
+        </div>
 
         <div class="section-container footer-upper">
             <!-- Brand Column -->
@@ -510,23 +770,23 @@
             <div class="footer-links-grid">
                 <div class="link-col">
                     <h4>Outposts</h4>
-                    <a href="#scorecard">Munsiyari</a>
-                    <a href="#scorecard">Jibhi</a>
-                    <a href="#scorecard">Khuri</a>
-                    <a href="#scorecard">Orchha</a>
+                    <a href="#scorecard" onclick="document.querySelector('[data-location=\'munsiyari\']').click();">Munsiyari Mud</a>
+                    <a href="#scorecard" onclick="document.querySelector('[data-location=\'jibhi\']').click();">Jibhi Cabin</a>
+                    <a href="#scorecard" onclick="document.querySelector('[data-location=\'khuri\']').click();">Khuri Dunes</a>
+                    <a href="#scorecard" onclick="document.querySelector('[data-location=\'orchha\']').click();">Orchha Heritage</a>
                 </div>
                 <div class="link-col">
                     <h4>What We Do</h4>
                     <a href="#pillars">Workations</a>
                     <a href="#pillars">Expeditions</a>
-                    <a href="#pillars">The Portal</a>
+                    <a href="#pillars">Commune Portal</a>
                     <a href="#pillars">Knowledge Hub</a>
                 </div>
                 <div class="link-col">
                     <h4>Get in Touch</h4>
                     <a href="mailto:hello@nomadcommune.in">hello@nomadcommune.in</a>
-                    <a href="#join">Join Waitlist</a>
-                    <a href="#">Field Logs</a>
+                    <a href="#join">Request Invite</a>
+                    <a href="#dispatches">Field Logs</a>
                 </div>
             </div>
         </div>

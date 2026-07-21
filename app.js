@@ -3,6 +3,7 @@
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
+    initHeaderScroll();
     initMobileNav();
     initRealitySlider();
     initVibeScorecard();
@@ -305,4 +306,23 @@ function initEmailSignup() {
             });
         }
     });
+}
+
+/**
+ * 5. Header Scroll Visual Class Trigger
+ */
+function initHeaderScroll() {
+    const header = document.querySelector('.main-header');
+    if (header) {
+        const toggleHeaderState = () => {
+            if (window.scrollY > 40) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        };
+        // Run once on load and bind scroll event
+        toggleHeaderState();
+        window.addEventListener('scroll', toggleHeaderState);
+    }
 }
